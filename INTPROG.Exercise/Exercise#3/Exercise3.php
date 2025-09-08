@@ -1,5 +1,5 @@
 <?php
-// Array of team members
+
 $team = [
     [
         "name" => "KENT ASHLEY SUAREZ",
@@ -21,7 +21,7 @@ $team = [
     ]
 ];
 
-// Get member ID from URL (example: ?id=1)
+
 $memberId = isset($_GET['id']) ? (int)$_GET['id'] : -1;
 $selectedMember = ($memberId >= 0 && $memberId < count($team)) ? $team[$memberId] : null;
 ?>
@@ -102,7 +102,7 @@ $selectedMember = ($memberId >= 0 && $memberId < count($team)) ? $team[$memberId
     <h1>POWER RANGERS</h1>
 
     <?php if ($selectedMember): ?>
-    <!-- Center the selected member -->
+  
     <div style="display:flex; justify-content:center; align-items:center; min-height:60vh;">
         <div class="team-member">
             <img src="<?= $selectedMember['image']; ?>" alt="<?= $selectedMember['name']; ?>">
@@ -113,7 +113,7 @@ $selectedMember = ($memberId >= 0 && $memberId < count($team)) ? $team[$memberId
         </div>
     </div>
 <?php else: ?>
-        <!-- Show all members with links -->
+   
         <div class="team-container">
             <?php foreach ($team as $index => $member): ?>
                 <div class="team-member">
@@ -130,3 +130,4 @@ $selectedMember = ($memberId >= 0 && $memberId < count($team)) ? $team[$memberId
 
 </body>
 </html>
+
