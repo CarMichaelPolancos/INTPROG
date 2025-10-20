@@ -1,12 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-// Read raw JSON input
 $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 if (!$data) {
-    // invalid or empty JSON
     http_response_code(400);
     echo json_encode([
         "status" => "error",
@@ -24,3 +22,4 @@ $response = [
 
 echo json_encode($response);
 ?>
+
